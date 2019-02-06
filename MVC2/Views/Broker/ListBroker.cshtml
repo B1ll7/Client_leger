@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MVC2.Models.broker>
+@{
+    ViewBag.Title = "ListBroker";
+}
+
+<div class="bg-white text-dark">
+    <h2 class="text-center">Listes des Courtiers</h2>
+    <table border="1" class="table p-1">
+        <thead>
+            <tr>
+                <th class="p-2">Nom</th>
+                <th class="p-2">Prenom</th>
+                <th class="p-2">Adresse Mail</th>
+                <th class="p-2">Numero de tel</th>
+                <th class="p-2"></th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            @foreach (var person in Model)
+            {
+                <tr>
+                    <td class="p-1">@Html.DisplayFor(modelItem => person.lastName)</td>
+                    <td class="p-1">@Html.DisplayFor(modelItem => person.firstName)</td>
+                    <td class="p-1">@Html.DisplayFor(modelItem => person.mail)</td>
+                    <td class="p-1">@Html.DisplayFor(modelItem => person.phoneNumber)</td>
+                    <td class="p-1 bg-dark">
+                         @Html.ActionLink("Voir profil", "ProfilBroker", "Broker", new { id = person.idBroker })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="AddBroker" class="btn bg-dark text-white">Ajouter Courtier</a>
+</div>
+
+

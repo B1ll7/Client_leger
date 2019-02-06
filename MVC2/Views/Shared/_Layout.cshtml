@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="p-0">
+    <div class="container-fluid p-0 mb-4">
+        <div class="navbar navbar-fixed-top topnav stext-light">
+            <span class="">@Html.ActionLink("Accueil", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</span>
+            <ul class="navbar navbar-nav flex-row">
+                <li class="p-1">@Html.ActionLink("Ajout Courtier", "AddBroker", "Broker", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="p-1">@Html.ActionLink("Listes des Courtiers", "ListBroker", "Broker", new { area = "" }, new { @class = "nav-link" })</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container body-content background">
+        @RenderBody()
+    </div>
+    <footer>
+        <div id="moncul" class="p-2 text-center">&copy; @DateTime.Now.Year - My ASP.NET Application</div> 
+    </footer>
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+</body>
+</html>

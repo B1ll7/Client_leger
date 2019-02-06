@@ -1,0 +1,75 @@
+﻿@model MVC2.Models.broker
+@{
+    ViewBag.Title = "AddBroker";
+}
+<div class="container border-dark badge-danger p-3">
+    <h1 class="text-center">Ajouter un nouveau Courtier</h1>
+    <form action="#" method="post" name="addBroker" id="addBroker" class="justify-content-center">
+        <div class="">
+            <div class="form-group">
+                <label for="lastName" class="control-label">Nom : </label><input type="text" name="lastName" id="lastName" class="form-control" value="@Request.Form["lastName"]" placeholder="Nom du Courtier" />
+                @Html.ValidationMessageFor(model => model.lastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="">
+            <div class="form-group"><label for="firstName" class="control-label">Prénom : </label><input type="text" name="firstName" id="firstName" class="form-control" value="@Request.Form["firstName"]" placeholder="Prénom du Courtier" /></div>
+            @Html.ValidationMessageFor(model => model.firstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="">
+            <div class="form-group"><label for="mail" class="control-label">Adresse Mail : </label><input type="text" name="mail" id="mail" class="form-control" value="@Request.Form["mail"]" placeholder="adresse mail du courtier" /></div>
+            @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
+        </div>
+        <div class="justify-content-center">
+            <div class="form-group"><label for="phoneNumber" class="control-label">Numero de tel : </label><input type="text" name="phoneNumber" id="phoneNumber" class="form-control" value="@Request.Form["phoneNumber"]" placeholder="Numero de Tel Courtier" /></div>
+            @Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "text-danger" })
+        </div>
+        <div class=""><input class="form-control" type="submit" name="submit" id="submit" value="Envoyer" /></div>
+    </form>
+    @*<div class="p-4 text-center mb-3">
+        <h2>Ajouter un nouveau Courtier</h2>
+    </div>
+    <form action="#" class="pr-5" method="POST">
+        <p class="row">
+            <label for="lastName" class="col-2">Nom : </label><input type="text" name="lastName" id="lastName" class="col" value="" placeholder="Boby" />
+        </p>
+        <p class="row"><label for="firstName" class="col-2">Prenom : </label><input type="text" name="firstName" id="firstName" class="col-10" value=" " placeholder="Jones" /></p>
+        <p class="row"><label for="phoneNumber" class="col-2">Numero de tel : </label><input type="text" name="phoneNumber" id="phoneNumber" class="col-10" value=" " placeholder="0000000000" /></p>
+        <p class="row"><label for="mail" class="col-2">Adresse mail : </label><input type="text" name="mail" id="mail" class="col-10" value=" " placeholder="bobyjones@tanterpian.fr" /></p>
+        <p class="text-center"><input type="submit" value="envoyer" /></p>
+    </form>*@
+
+    @*<form action="#" method="POST" name="addBroker" id="addBroker">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="lastname" class="control-label">Nom : </label>
+                <input class="form-control" type="text" name="lastname" id="lastname" value="@Request.Form["lastname"]" placeholder="Nom" />
+                @* Affichage d'un message d'erreur *@
+                @*@Html.ValidationMessageFor(model => model.lastname , "", new { @class = "text-danger"})*@
+        @*</div>
+        <div class="form-group">
+            <label for="firstname" class="control-label">Prénom : </label>
+            <input class="form-control" type="text" name="firstname" id="firstname" value="@Request.Form["firstname"]" placeholder="Prénom" />*@
+            @* Affichage d'un message d'erreur *@
+            @*@Html.ValidationMessageFor(model => model.firstname, "", new { @class = "text-danger" })*@
+        @*</div>
+        <div class="form-group">
+            <label for="mail" class="control-label">Mail : </label>
+            <input class="form-control" type="email" name="mail" id="mail" value="@Request.Form["mail"]" placeholder="mail" />
+            @* Affichage d'un message d'erreur *@
+            @*@Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })*@
+        @*</div>*@
+        @*<div class="form-group">
+            <label for="phoneNumber" class="control-label">Téléphone : </label>
+            <input class="form-control" type="text" name="phoneNumber" id="phoneNumber" value="@Request.Form["phoneNumber"]" placeholder="Téléphone" />*@
+            @* Affichage d'un message d'erreur *@
+            @*@Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "text-danger" })*@
+        @*</div>
+        <div class="form-group">
+            <label for="submit" class="control-label"></label>
+            <input class="form-control" type="submit" name="submit" id="submit" value="Enregistrer" />
+        </div>
+    </div>
+    </form>*@
+</div>
+
+

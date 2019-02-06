@@ -1,0 +1,14 @@
+﻿@model MVC2.Models.broker
+@{
+    ViewBag.Title = "ProfilBroker";
+}
+
+<h2>ProfilBroker</h2>
+<p>@Html.LabelFor(model => model.lastName, "", new { })</p>
+<p>@Html.EditorFor(model => model.lastName)</p>
+<p>@Html.LabelFor(model => model.firstName)</p>
+<p>@Html.EditorFor(model => model.firstName)</p>
+<p>@Html.LabelFor(model => model.mail)</p>
+<p>@Html.EditorFor(model => model.mail)</p>
+<p>@Html.LabelFor(model => model.phoneNumber)</p>
+<p>@Html.EditorFor(model => model.phoneNumber)</p>
