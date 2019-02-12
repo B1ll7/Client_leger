@@ -181,6 +181,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BrokerController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,7 +218,16 @@
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
     <Content Include="Views\Broker\SuccessAddBroker.cshtml" />
+    <Content Include="Views\Customer\AddCustomer.cshtml" />
     <Content Include="Views\Broker\ProfilBroker.cshtml" />
+    <Content Include="Views\Customer\ListCustomer.cshtml" />
+    <Content Include="Views\Customer\SuccessAddCustomer.cshtml" />
+    <Content Include="Views\Customer\ProfilCustomer.cshtml" />
+    <Content Include="Views\Broker\ErrorPageNotFound.cshtml" />
+    <Content Include="Views\Customer\ErrorPageNotFound.cshtml" />
+    <Content Include="Views\Broker\ErrorBadRequest.cshtml" />
+    <Content Include="Views\Customer\ErrorBadRequest.cshtml" />
+    <Content Include="Views\Customer\DeleteCustomer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

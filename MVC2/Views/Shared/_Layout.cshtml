@@ -12,17 +12,19 @@
     <div class="container-fluid p-0 mb-4">
         <div class="navbar navbar-fixed-top topnav stext-light">
             <span class="">@Html.ActionLink("Accueil", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</span>
-            <ul class="navbar navbar-nav flex-row">
-                <li class="p-1">@Html.ActionLink("Ajout Courtier", "AddBroker", "Broker", new { area = "" }, new { @class = "nav-link" })</li>
-                <li class="p-1">@Html.ActionLink("Listes des Courtiers", "ListBroker", "Broker", new { area = "" }, new { @class = "nav-link" })</li>
+            <ul class="navbar navbar-nav flex-row m-0 p-0">
+                <li class="p-3 pt-3 pb-3 m-0 mr-1 bg-secondary">@Html.ActionLink("Ajout Courtier", "AddBroker", "Broker", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="p-3 pt-3 m-0 mr-1 pb-3 bg-secondary">@Html.ActionLink("Liste des Courtiers", "ListBroker", "Broker", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="p-3 pt-3 m-0 mr-1 pb-3 bg-secondary">@Html.ActionLink("Ajout Client", "AddCustomer", "Customer", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="p-3 pt-3 m-0 mr-1 pb-3 bg-secondary">@Html.ActionLink("Liste des Clients", "ListCustomer", "Customer", new { area = "" }, new { @class = "nav-link" })</li>
             </ul>
         </div>
     </div>
-    <div class="container body-content background">
+    <div class="container-fluid body-content background">
         @RenderBody()
     </div>
-    <footer>
-        <div id="moncul" class="p-2 text-center">&copy; @DateTime.Now.Year - My ASP.NET Application</div> 
+    <footer class="p-0 mt-5">
+        <div id="footer" class="p-2 m-0 text-center">&copy; @DateTime.Now.Year - My ASP.NET Application</div> 
     </footer>
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>

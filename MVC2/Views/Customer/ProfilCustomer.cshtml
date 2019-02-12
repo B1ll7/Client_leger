@@ -1,19 +1,16 @@
-﻿@model MVC2.Models.broker
+﻿@model MVC2.Models.customer
 @{
-    ViewBag.Title = "ProfilBroker";
+    ViewBag.Title = "ProfilCustomer";
 }
 
+<h2>Profil Client</h2>
 
-<h2>Voir le profil du courtier</h2>
-
-<form action="#" method="post" name="profilBroker" class="#">
+<form action="#" method="post" name="profilCustomer" class="#">
     @*@Html.AntiForgeryToken()*@
-    @Html.HiddenFor(model => model.idBroker)
+    @Html.HiddenFor(model => model.idCustomer)
     <p>
         <label for="lastName">Nom : </label>
-        <input type="text" name="lastName" id="lastName" class="form-control" value="@Html.Display("lastName")" />       
-        @*<input type="text" name="lastName" id="lastName" class="form-control" value="@Html.DisplayFor(model => model.lastName)" />*@ 
-        @*<input type="text" name="lastName" id="lastName" class="form-control" value="@Model.lastName" />*@
+        <input type="text" name="lastName" id="lastName" class="form-control" value="@Html.Display("lastName")" />
         @Html.ValidationMessageFor(model => model.lastName, "", new { @class = "text-danger" })
     </p>
     <p>
@@ -31,5 +28,15 @@
         <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" value="@Html.Display("phoneNumber")" />
         @Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "text-danger" })
     </p>
-    <input type="submit" value="MARCHEEEUUUUH" class="btn btn-default btn-dark btn-outline-red"/>
+    <p>
+        <label for="budget">budget : </label>
+        <input type="text" name="budget" id="budget" class="form-control" value="@Html.Display("budget")" />
+        @Html.ValidationMessageFor(model => model.budget, "", new { @class = "text-danger" })
+    </p>
+    <p>
+        <label for="subject">sujet : </label>
+        <textarea type="text" name="subject" id="subject" class="form-control">@Html.Display("subject")</textarea>
+        @Html.ValidationMessageFor(model => model.subject, "", new { @class = "text-danger" })
+    </p>
+    <input type="submit" value="Enregistre" class="btn btn-default btn-dark btn-outline-red" />
 </form>

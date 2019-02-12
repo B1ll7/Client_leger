@@ -2,9 +2,9 @@
 @{
     ViewBag.Title = "AddBroker";
 }
-<div class="container border-dark badge-danger p-3">
-    <h1 class="text-center">Ajouter un nouveau Courtier</h1>
-    <form action="#" method="post" name="addBroker" id="addBroker" class="justify-content-center">
+<div class="p-3 offset-3">
+    <h1 class="display-4 text-capitalize">Ajouter un nouveau Courtier</h1>
+    <form action="#" method="post" name="addBroker" id="addBroker" class="offset-2">
         <div class="">
             <div class="form-group">
                 <label for="lastName" class="control-label">Nom : </label><input type="text" name="lastName" id="lastName" class="form-control" value="@Request.Form["lastName"]" placeholder="Nom du Courtier" />

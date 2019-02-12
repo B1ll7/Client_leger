@@ -1,11 +1,10 @@
 ﻿@*Permet l'affichage des données correspondants au model choisi *@
-@model IEnumerable<MVC2.Models.broker>
+@model IEnumerable<MVC2.Models.customer>
 @{
-    ViewBag.Title = "ListBroker";
+    ViewBag.Title = "ListCustomer";
 }
-
 <div class="bg-white text-dark">
-    <h2 class="text-center">Liste des Courtiers</h2>
+    <h2 class="text-center">Liste des Clients</h2>
     <table border="1" class="table p-1">
         <thead>
             <tr>
@@ -13,6 +12,8 @@
                 <th class="p-2">Prenom</th>
                 <th class="p-2">Adresse Mail</th>
                 <th class="p-2">Numero de tel</th>
+                <th class="p-2">Budget</th>
+                <th class="p-2">Raison de venue</th>
                 <th class="p-2"></th>
             </tr>
         </thead>
@@ -25,14 +26,17 @@
                     <td class="p-1">@Html.DisplayFor(modelItem => person.firstName)</td>
                     <td class="p-1">@Html.DisplayFor(modelItem => person.mail)</td>
                     <td class="p-1">@Html.DisplayFor(modelItem => person.phoneNumber)</td>
-                    <td class="p-1 bg-dark">
-                        @Html.ActionLink("Voir profil", "ProfilBroker", new { id = person.idBroker })
+                    <td class="p-1">@Html.DisplayFor(modelItem => person.budget)</td>
+                    <td class="p-1">@Html.DisplayFor(modelItem => person.subject)</td>
+                    <td class="bg-dark text-light pr-0 pl-0">
+                        @*<a href="/Customer/ProfilCustomer/5">Voir profil</a>*@
+                        @Html.ActionLink("Voir profil", "ProfilCustomer", new { id = person.idCustomer })
+                        |
+                        @Html.ActionLink("Supprimer", "DeleteCustomer", new { id = person.idCustomer })
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <a href="AddBroker" class="btn bg-danger">Ajouter Courtier</a>
+    <a href="AddCustomer" class="btn bg-danger">Ajouter Client</a>
 </div>
-
-

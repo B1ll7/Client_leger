@@ -17,16 +17,24 @@ select,
 textarea {
     max-width: 280px;
 }
-#moncul {
-    position: absolute;
+#footer {
+    position: fixed;
     bottom: 0px;
     width: 100%;
-    background-color: darkgray;
+    background-color: black;
+    color: aliceblue;
 }
 .topnav {
     background-color: darkgray;
 }
 
 a{
-    color: aliceblue;
+    color: white;
+}
+a:hover
+{
+    color: white;
+}
+.navbar{
+    background-color: black;
 }

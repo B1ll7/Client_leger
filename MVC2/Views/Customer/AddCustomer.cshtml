@@ -1,0 +1,37 @@
+﻿@model MVC2.Models.customer
+@{
+    ViewBag.Title = "AddCustomer";
+}
+
+<div class="p-3 offset-3">
+<h1 class="display-4 text-capitalize">Ajouter un nouveau Client</h1>
+<form action="#" method="post" name="addBroker" id="addBroker" class="offset-2">
+    <div class="">
+        <div class="form-group">
+            <label for="lastName" class="control-label">Nom : </label><input type="text" name="lastName" id="lastName" class="form-control" value="@Request.Form["lastName"]" placeholder="Nom du Client" />
+            @Html.ValidationMessageFor(model => model.lastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="">
+        <div class="form-group"><label for="firstName" class="control-label">Prénom : </label><input type="text" name="firstName" id="firstName" class="form-control" value="@Request.Form["firstName"]" placeholder="Prénom du Client" /></div>
+        @Html.ValidationMessageFor(model => model.firstName, "", new { @class = "text-danger" })
+    </div>
+    <div class="">
+        <div class="form-group"><label for="mail" class="control-label">Adresse Mail : </label><input type="text" name="mail" id="mail" class="form-control" value="@Request.Form["mail"]" placeholder="adresse mail du Client" /></div>
+        @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
+    </div>
+    <div class="justify-content-center">
+        <div class="form-group"><label for="phoneNumber" class="control-label">Numero de tel : </label><input type="text" name="phoneNumber" id="phoneNumber" class="form-control" value="@Request.Form["phoneNumber"]" placeholder="Numero de Tel Client" /></div>
+        @Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "text-danger" })
+    </div>
+    <div class="justify-content-center">
+        <div class="form-group"><label for="budget" class="control-label">Budget : </label><input type="text" name="budget" id="budget" class="form-control" value="@Request.Form["budget"]" placeholder="le budget du client" /></div>
+        @Html.ValidationMessageFor(model => model.budget, "", new { @class = "text-danger" })
+    </div>
+    <div class="justify-content-center">
+        <div class="form-group"><label for="subject" class="control-label">Subjet : </label><textarea type="text" name="subject" id="subject" class="form-control" placeholder="la raison de sa venue">@Request.Form["subject"]</textarea></div>
+        @Html.ValidationMessageFor(model => model.subject, "", new { @class = "text-danger" })
+    </div>
+    <div class=""><input class="form-control" type="submit" name="submit" id="submit" value="Envoyer" /></div>
+</form>
+</div>
