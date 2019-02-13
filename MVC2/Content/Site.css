@@ -38,3 +38,11 @@ a:hover
 .navbar{
     background-color: black;
 }
+
+p a
+{
+    color: black;
+}
+p a:hover{
+    color: darkred;
+}

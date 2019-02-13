@@ -17,6 +17,7 @@
                 <li class="p-3 pt-3 m-0 mr-1 pb-3 bg-secondary">@Html.ActionLink("Liste des Courtiers", "ListBroker", "Broker", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="p-3 pt-3 m-0 mr-1 pb-3 bg-secondary">@Html.ActionLink("Ajout Client", "AddCustomer", "Customer", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="p-3 pt-3 m-0 mr-1 pb-3 bg-secondary">@Html.ActionLink("Liste des Clients", "ListCustomer", "Customer", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="p-3 pt-3 m-0 mr-1 pb-3 bg-secondary">@Html.ActionLink("Ajouter un rendez-vous", "AddAppointment", "Appointment", new { area = "" }, new { @class = "nav-link" })</li>
             </ul>
         </div>
     </div>
@@ -24,10 +25,11 @@
         @RenderBody()
     </div>
     <footer class="p-0 mt-5">
-        <div id="footer" class="p-2 m-0 text-center">&copy; @DateTime.Now.Year - My ASP.NET Application</div> 
+        <div id="footer" class="p-2 m-0 text-center">&copy; @DateTime.Now.Year - My ASP.NET Application</div>
     </footer>
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/umd/script.js"></script>
 </body>
 </html>

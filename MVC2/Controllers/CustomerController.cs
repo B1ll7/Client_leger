@@ -22,11 +22,7 @@ namespace MVC2.Controllers
         {
             return View("AddCustomer");
         }
-        // DELETE: Customer
-        public ActionResult DeleteCustomer()
-        {
-            return View("DeleteCustomer");
-        }
+
         //redirection vers la page de succès
         public ActionResult SuccessAddCustomer()
         {
@@ -203,24 +199,24 @@ namespace MVC2.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View("ErrorBadRequest");
             }
             customer customers = db.customers.Find(id);
             if (customers == null)
             {
-                return HttpNotFound();
+                return View("ErrorPageNotFound");
             }
             return View(customers);
         }
         // POST: customers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
             customer customers = db.customers.Find(id);
             db.customers.Remove(customers);
             db.SaveChanges();
-            return RedirectToAction("listCustomer");
+            return RedirectToAction("ListCustomer");
         }
 
         protected override void Dispose(bool disposing)
@@ -232,5 +228,4 @@ namespace MVC2.Controllers
             base.Dispose(disposing);
         }
     }
-}
 }

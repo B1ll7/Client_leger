@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "DeleteCustomer";
 }
-<a href="~/Views/Customer/ListCustomer.cshtml" class="text-dark">revenir en arrière</a>
+<p>@Html.ActionLink("Revenir en arrière", "ListCustomer", new { })</p>
 <form action="#" method="post" name="profilCustomer" class=" offset-1 pt-4">
     <h1 class="">Vous êtes sur de vouloir vraiment supprimer ce client ? </h1>
     @*@Html.AntiForgeryToken()*@
@@ -15,5 +15,12 @@
         <label for="firstName">Prénom : </label>
         <input type="text" name="firstName" id="firstName" class="form-control ml-3" value="@Model.firstName" />
     </p>
-    <input type="submit" value="Supprimer" class="btn btn-default btn-dark btn-outline-red" />
+    @using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Supprimer" class="btn btn-default btn-dark btn-outline-red" />
+    }
+
 </form>
+
