@@ -231,6 +231,8 @@
     <Content Include="Views\Customer\ErrorBadRequest.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Appointment\AddAppointment.cshtml" />
+    <Content Include="Views\Appointment\SuccessAddAppointment.cshtml" />
+    <Content Include="Views\Appointment\Validate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,7 +1,29 @@
-﻿
+﻿@model IEnumerable<MVC2.Models.appointment>
 @{
     ViewBag.Title = "index";
 }
 
 <h2>index</h2>
+<table>
+    <thead>
+        <tr>
+            <th class="p-2">Nom du courtier</th>
+            <th class="p-2">Nom du client</th>
+            <th class="p-2">Date du rendez-vous</th>
+            <th class="p-2"></th>
+        </tr>
+    </thead>
+    @foreach (var person in Model)
+    {
+        //Genere une liste automatiquement grace a la boucle et au razor qui recupère l'info
+        <tr>
+            <td class="p-1">@Html.DisplayFor(modelItem => person.idBroker)</td>
+            <td class="p-1">@Html.DisplayFor(modelItem => person.idCustomer)</td>
+            <td class="p-1">@Html.DisplayFor(modelItem => person.dateHour)</td>
+            <td class="p-1 bg-dark">
+                @*@Html.ActionLink("Voir profil", "ProfilBroker", new { id = person.idBroker })*@
+            </td>
+        </tr>
+    }
+</table>
 

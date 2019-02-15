@@ -7,7 +7,7 @@ using System.Data.Entity;
 using System.Net;
 
 namespace MVC2.Controllers
-{   
+{
     public class CustomerController : Controller
     {
         private NoteBookEntities1 db = new NoteBookEntities1();
@@ -15,7 +15,8 @@ namespace MVC2.Controllers
         //GET: ListCustomer
         public ActionResult ListCustomer()
         {
-            return View(db.customers.ToList());
+            var listCustomer = db.customers.SqlQuery("SELECT * FROM [dbo].[customers] ORDER BY [lastName] ASC");
+            return View(listCustomer);
         }
         // GET: Customer
         public ActionResult AddCustomer()
@@ -30,8 +31,12 @@ namespace MVC2.Controllers
         }
         // Instanciation du constructeur
         [HttpPost]
-        public ActionResult AddCustomer([Bind(Include = "idCustomer, lastName, firstName, mail, phoneNumber, budget, subject")] customer CustomerToAdd)
+        [ValidateAntiForgeryToken]
+        [ActionName("AddCustomer")]
+        public ActionResult AddCustome()
         {
+            customer CustomerToAdd = new customer();
+            TryUpdateModel(CustomerToAdd);
             string regexName = @"^[A-Za-zéèëêuùçôàö\-]+$";
             string regexMail = @"[0-9a-zA-Z\.\-]+@[0-9a-zA-Z\.\-]+.[a-zA-Z]{2,4}";
             string regexPhone = @"^[0][0-9]{9}";

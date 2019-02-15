@@ -7,13 +7,14 @@
 
 <h2>AddAppointment</h2>
 
-<form>
-    <p><label for="broker">Nom et Prenom du Courtier</label>@Html.DropDownList("idBroker", null, htmlAttributes: new { @class = "form-control" })</p>
+<form method="post" action="#" name="appointment">
+    @Html.DropDownList("idBroker", null, htmlAttributes: new { @class = "form-control" })
     <p><label for="customer">Nom et Prenom du Client</label>@Html.DropDownList("idCustomer", null, htmlAttributes: new { @class = "form-control" })</p>
     <div>
         <label for="start">Date du rendez-vous:</label>
-        <input id="date" type="date" value="choisir l'heure" min="2019-02-13">
-        <select>
+        @*<input id="date" type="date" value="choisir l'heure" min="2019-02-13">*@
+        <input type="date" id="start" name="trip-start" value="2019-07-22" min="2019-01-01" />
+        <select name="horaire" id="horaire">
             <option>09:00</option>
             <option>10:00</option>
             <option>11:00</option>
@@ -22,17 +23,10 @@
             <option>15:00</option>
             <option>16:00</option>
             <option>17:00</option>
-            <option>18:00</option>
         </select>
-        @*
-        La secretaire choisi la date annee, mois et jour, elle donne les valeurs de ces variables.
-         >> Il lui est proposé par le code, des horaires de rendez-vous. ex: 30min par rendez-vous.
-         >> Si l'heure est déjà inscrite dans la db.. >> le code retire des horaires proposés l'heure déjà inscrite.
-         >>
-        *@
     </div>
     <p>
         <input type="submit" value="MARCHEEEUUUUH" class="btn btn-default btn-dark btn-outline-red" />
     </p>
 </form>
-<input type="datetime" value="" class="hide"/>
+<div id="ol" hidden></div>
