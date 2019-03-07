@@ -4,12 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5f89aaf8bfc14ee18259c8f2cb3d72e1" Name="Diagram1">
+      <Diagram DiagramId="5f89aaf8bfc14ee18259c8f2cb3d72e1" Name="Diagram1" ZoomLevel="71">
         <EntityTypeShape EntityType="NoteBookModel.appointment" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="NoteBookModel.broker" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="NoteBookModel.customer" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="NoteBookModel.appointments_brokers0_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="NoteBookModel.appointments_customers_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteBookModel.appointments_customers_FK" ManuallyRouted="false" >
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

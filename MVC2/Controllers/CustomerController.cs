@@ -37,7 +37,7 @@ namespace MVC2.Controllers
         {
             customer CustomerToAdd = new customer();
             TryUpdateModel(CustomerToAdd);
-            string regexName = @"^[A-Za-zéèëêuùçôàö\-]+$";
+            string regexName = @"^[A-Za-zéèëêuùçôàö \-]+$";
             string regexMail = @"[0-9a-zA-Z\.\-]+@[0-9a-zA-Z\.\-]+.[a-zA-Z]{2,4}";
             string regexPhone = @"^[0][0-9]{9}";
             string regexSubject = @"^[A-Za-zéèëêuùçôàö\-' ]+$";

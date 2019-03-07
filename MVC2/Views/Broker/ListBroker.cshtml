@@ -4,8 +4,8 @@
     ViewBag.Title = "ListBroker";
 }
 
-<div class="bg-white text-dark">
-    <h2 class="text-center">Liste des Courtiers</h2>
+<div class="">
+    <p class="text-center display-3">Liste des Courtiers</p>
     <table border="1" class="table p-1">
         <thead>
             <tr>
@@ -26,7 +26,8 @@
                     <td class="p-1">@Html.DisplayFor(modelItem => person.mail)</td>
                     <td class="p-1">@Html.DisplayFor(modelItem => person.phoneNumber)</td>
                     <td class="p-1 bg-dark">
-                        @Html.ActionLink("Voir profil", "ProfilBroker", new { id = person.idBroker })
+                        @Html.ActionLink("Voir profil", "ProfilBroker", new { id = person.idBroker }) |
+                        @Html.ActionLink("Prendre RDV", "AddAppointment", "Appointment", new { id = person.idBroker }, null)
                     </td>
                 </tr>
             }
@@ -34,5 +35,4 @@
     </table>
     <a href="AddBroker" class="btn bg-danger">Ajouter Courtier</a>
 </div>
-@dropdown
 

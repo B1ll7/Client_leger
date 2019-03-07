@@ -2,28 +2,41 @@
 @{
     ViewBag.Title = "index";
 }
-
-<h2>index</h2>
-<table>
-    <thead>
-        <tr>
-            <th class="p-2">Nom du courtier</th>
-            <th class="p-2">Nom du client</th>
-            <th class="p-2">Date du rendez-vous</th>
-            <th class="p-2"></th>
+<div>
+    <p class="display-3">index</p>
+    <table class="table w-100">
+        <tr class="border">
+            <th class="border">
+                @Html.DisplayNameFor(model => model.dateHour)
+            </th>
+            <th class="border">
+                @Html.DisplayNameFor(model => model.broker.lastName)
+            </th>
+            <th class="border">
+                @Html.DisplayNameFor(model => model.customer.lastName)
+            </th>
+            <th class="border"></th>
         </tr>
-    </thead>
-    @foreach (var person in Model)
-    {
-        //Genere une liste automatiquement grace a la boucle et au razor qui recupère l'info
-        <tr>
-            <td class="p-1">@Html.DisplayFor(modelItem => person.idBroker)</td>
-            <td class="p-1">@Html.DisplayFor(modelItem => person.idCustomer)</td>
-            <td class="p-1">@Html.DisplayFor(modelItem => person.dateHour)</td>
-            <td class="p-1 bg-dark">
-                @*@Html.ActionLink("Voir profil", "ProfilBroker", new { id = person.idBroker })*@
-            </td>
-        </tr>
-    }
-</table>
-
+        <tbody>
+            @foreach (var person in Model)
+            {
+                <tr class="border r-link text-left">
+                    <td class="border">
+                        @Html.DisplayFor(modelItem => person.dateHour)
+                    </td>
+                    <td class="border">
+                        @Html.DisplayFor(modelItem => person.broker.lastName)
+                        @Html.DisplayFor(modelItem => person.broker.firstName)
+                    </td>
+                    <td class="border">
+                        @Html.DisplayFor(modelItem => person.customer.lastName)
+                        @Html.DisplayFor(modelItem => person.customer.firstName)
+                    </td>
+                    <td class="border text-center row">
+                        <span class="col border-0">@Html.ActionLink("Details", "More", new { id = person.idAppointment })</span> | <span class="col border-0">@Html.ActionLink("Supprimer", "DeleteAppointment", new { id = person.idAppointment })</span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

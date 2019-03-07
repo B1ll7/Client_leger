@@ -6,6 +6,7 @@
 <div class="p-3 offset-3">
 <h1 class="display-4 text-capitalize">Ajouter un nouveau Client</h1>
 <form action="#" method="post" name="addBroker" id="addBroker" class="offset-2">
+    @Html.AntiForgeryToken()
     <div class="">
         <div class="form-group">
             <label for="lastName" class="control-label">Nom : </label><input type="text" name="lastName" id="lastName" class="form-control" value="@Request.Form["lastName"]" placeholder="Nom du Client" />

@@ -11,8 +11,7 @@ namespace MVC2.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class appointment
     {
         public int idAppointment { get; set; }

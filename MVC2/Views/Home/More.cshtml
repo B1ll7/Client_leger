@@ -1,0 +1,22 @@
+﻿@model MVC2.Models.appointment
+@{
+    ViewBag.Title = "More";
+}
+
+<h2>More</h2>
+<form>
+    @Html.AntiForgeryToken()
+    <div>
+        nom prenom du courtier
+    </div>
+    @Html.DisplayFor(model => model.broker.lastName)
+    <div>
+        nom prenom du client
+    </div>
+    @Html.DisplayFor(model => model.customer.lastName)
+
+    <div>
+        @Html.DisplayFor(model => model.customer.subject)
+    </div>
+</form>
+<a></a>

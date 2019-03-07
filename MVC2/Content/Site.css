@@ -24,6 +24,9 @@ textarea {
     background-color: black;
     color: aliceblue;
 }
+.footer {
+    margin-top: 10px;
+}
 .topnav {
     background-color: darkgray;
 }
@@ -45,4 +48,25 @@ p a
 }
 p a:hover{
     color: darkred;
+}
+
+.r-link a
+{
+    color: black;
+}
+
+.r-link a:hover
+{
+    text-decoration: none;
+}
+
+table th{
+    background-color: midnightblue;
+    color: aliceblue;
+}
+
+.number-line-page
+{
+    position: relative;
+    right: 0px;
 }

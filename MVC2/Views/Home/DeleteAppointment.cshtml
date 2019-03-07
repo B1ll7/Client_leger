@@ -1,0 +1,46 @@
+﻿@model MVC2.Models.appointment
+@{
+    ViewBag.Title = "banane";
+}
+<h2 class="display-5">Est-ce vous sur de vouloir supprimer ce rendez-vous ?</h2>
+<div>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            DateHour
+        </dt>
+
+        <dd class="text-dark">
+            @Html.DisplayFor(model => model.dateHour)
+        </dd>
+
+        <dt>
+            Nom courtier
+        </dt>
+
+        <dd class="text-dark">
+            @Html.DisplayFor(model => model.broker.lastName)
+        </dd>
+
+        <dt>
+            Nom Client
+        </dt>
+
+        <dd class="text-dark">
+            @Html.DisplayFor(model => model.customer.lastName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <div class="text-danger">@Html.ActionLink("Back to List", "Index")</div>
+        </div>
+    }
+</div>
+

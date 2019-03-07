@@ -3,40 +3,66 @@
 @{
     ViewBag.Title = "ListCustomer";
 }
-<div class="bg-white text-dark">
-    <h2 class="text-center">Liste des Clients</h2>
-    <table border="1" class="table p-1">
-        <thead>
-            <tr>
-                <th class="p-2">Nom</th>
-                <th class="p-2">Prenom</th>
-                <th class="p-2">Adresse Mail</th>
-                <th class="p-2">Numero de tel</th>
-                <th class="p-2">Budget</th>
-                <th class="p-2">Raison de venue</th>
-                <th class="p-2"></th>
-            </tr>
-        </thead>
-        <tbody class="text-center">
-            @foreach (var person in Model)
-            {
-                //Genere une liste automatiquement grace a la boucle et au razor qui recupère l'info
-                <tr>
-                    <td class="p-1">@Html.DisplayFor(modelItem => person.lastName)</td>
-                    <td class="p-1">@Html.DisplayFor(modelItem => person.firstName)</td>
-                    <td class="p-1">@Html.DisplayFor(modelItem => person.mail)</td>
-                    <td class="p-1">@Html.DisplayFor(modelItem => person.phoneNumber)</td>
-                    <td class="p-1">@Html.DisplayFor(modelItem => person.budget)</td>
-                    <td class="p-1">@Html.DisplayFor(modelItem => person.subject)</td>
-                    <td class="bg-dark text-light pr-0 pl-0">
-                        @*<a href="/Customer/ProfilCustomer/5">Voir profil</a>*@
-                        @Html.ActionLink("Voir profil", "ProfilCustomer", new { id = person.idCustomer })
-                        |
-                        @Html.ActionLink("Supprimer", "Delete", new { id = person.idCustomer })
-                    </td>
+    <div class="container">
+        <div class="row">
+            <input class="border border-primary searchbar-input" id="myInput" name="client" type="text" placeholder="Chercher Client" onkeyup="clearSearch()" />
+
+        </div>
+        <h2 class="text-center">Liste des Clients</h2>
+        <table border="1" class="table p-1" id="showPage">
+            <thead>
+                <tr class="">
+                    <th class="p-2">Nom</th>
+                    <th class="p-2">Prenom</th>
+                    <th class="p-2">Adresse Mail</th>
+                    <th class="p-2">Numero de tel</th>
+                    <th class="p-2">Budget</th>
+                    <th class="p-2">Raison de venue</th>
+                    <th class="p-2"></th>
                 </tr>
-            }
-        </tbody>
-    </table>
-    <a href="AddCustomer" class="btn bg-danger">Ajouter Client</a>
-</div>
+            </thead>
+            <tbody class="text-center" id="myTable">
+                @foreach (var person in Model)
+                {
+                    //Genere une liste automatiquement grace a la boucle et au razor qui recupère l'info
+                    <tr class="Search">
+                        <td class="p-1">@Html.DisplayFor(modelItem => person.lastName)</td>
+                        <td class="p-1">@Html.DisplayFor(modelItem => person.firstName)</td>
+                        <td class="p-1">@Html.DisplayFor(modelItem => person.mail)</td>
+                        <td class="p-1">@Html.DisplayFor(modelItem => person.phoneNumber)</td>
+                        <td class="p-1">@Html.DisplayFor(modelItem => person.budget)</td>
+                        <td class="p-1">@Html.DisplayFor(modelItem => person.subject)</td>
+                        <td class="bg-dark text-light pr-0 pl-0">
+                            @Html.ActionLink("Voir profil", "ProfilCustomer", new { id = person.idCustomer })
+                            |
+                            @Html.ActionLink("Supprimer", "Delete", new { id = person.idCustomer })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="row">
+            <a href="AddCustomer" class="btn bg-danger col-3 ml-3">Ajouter Client</a>
+            @*partie sur la pagination*@
+            <div class="badge-danger offset-6 pl-3 col-lg-6">
+                <div class="form-group mt-2 number-line-page row">
+                    <select name="state" id="maxRows" class="form-control col ml-2">
+                        <option value="5000">Show All</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="75">75</option>
+                        <option value="100">100</option>
+                    </select>
+                    <p class="mt-2 mr-3 text-black-50 col"> Choisir le nombre de ligne </p>
+                </div>
+                <div class="pagination-container">
+                    <nav class="">
+                        <ul class="pagination"></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>

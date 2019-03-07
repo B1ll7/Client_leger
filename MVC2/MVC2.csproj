@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\img\bourse.jpg" />
+    <Content Include="assets\img\Sans titre.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -233,6 +234,8 @@
     <Content Include="Views\Appointment\AddAppointment.cshtml" />
     <Content Include="Views\Appointment\SuccessAddAppointment.cshtml" />
     <Content Include="Views\Appointment\Validate.cshtml" />
+    <Content Include="Views\Home\More.cshtml" />
+    <Content Include="Views\Home\DeleteAppointment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
